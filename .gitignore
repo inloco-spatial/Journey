@@ -1,4 +1,4 @@
-# Unity
+# Unity: базовые каталоги
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -6,24 +6,74 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
-/Library/GiCache/
 
-# Lightmaps & LightingData
-/Assets/Lightmap-*/*.exr
-/Assets/LightingData.asset
+# Лайтмапы и GI
+[Ll]ightmapSnapshot/
+[Ll]ightingData.asset
+[Ll]ightProbes.asset
 
-# Spatial.io generated
-/Assets/Generated/
-/schema/
+# Кэш спрайтов и GI
+/[Aa]ssets/**/Lightmap*
+/[Aa]ssets/**/Occlusion*
 
-# Git LFS (если используете)
-/*.psd filter=lfs diff=lfs merge=lfs -text
-*.exr filter=lfs diff=lfs merge=lfs -text
-*.asset filter=lfs diff=lfs merge=lfs -text
-
-# IDE & OS
-.vs/
-*.csproj
-*.sln
+# Системные файлы
 .DS_Store
+*.swp
+*.tmp
+
+# Временные конфиги Unity
+UserSettings/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+
+# IDE
+.vscode/
+.idea/
+*.pidb
+*.booproj
+
+# Build pipeline
+*.apk
+*.aab
+*.unitypackage
+
+# Collaborate и Cloud
+.collabignore
+.collab/
+*.collabmeta
+
+# TextMeshPro
+[Aa]ssets/TextMesh Pro/Resources/Font Asset Creator Settings.asset
+
+# Unity Cache Server
+UnityCache/
+
+# Asset Store
+[Aa]ssets/AssetStoreTools*
+
+# Spatial.io (кэш сцен, временные данные)
+SpatialCache/
+SpatialTemp/
+SpatialBuilds/
+
+# MacOS
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Crash reports
+sysinfo.txt
