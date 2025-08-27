@@ -13,7 +13,7 @@ Shader "Custom/UnlitFadeSimple"
         LOD 100
 
         Blend SrcAlpha OneMinusSrcAlpha
-        ZWrite Off
+        ZWrite On
         Cull Off
 
         Pass

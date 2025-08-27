@@ -36,7 +36,7 @@
 
     SubShader
     {
-        Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" "TerrainCompatible" = "true"}
         LOD 300
         Cull Off
         ZWrite Off
@@ -51,8 +51,10 @@
             #pragma vertex vert
             #pragma fragment frag
 
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+            //#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            //#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+            #include "UnityCG.cginc" 
+
 
             // Gradients
             float4 _HeightColorLow, _HeightColorHigh;
@@ -80,7 +82,7 @@
                 float3 posWS  : TEXCOORD0;
                 float4 scrPos : TEXCOORD1;
             };
-
+            /*
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
@@ -89,6 +91,7 @@
                 OUT.scrPos  = ComputeScreenPos(OUT.posH);
                 return OUT;
             }
+            */
 
             half4 frag(Varyings IN) : SV_Target
             {
@@ -97,7 +100,8 @@
                 float3 baseCol = lerp(_HeightColorLow.rgb, _HeightColorHigh.rgb, hNorm);
 
                 // 2) Linear eye depth
-                float depth = LinearEyeDepth(IN.posH.z, _ZBufferParams);
+                float depth = LinearEyeDepth( _ZBufferParams);
+                //float depth = LinearEyeDepth(IN.posH.z, _ZBufferParams);
 
                 // 3) Terrain tint by distance/density
                 float terrainTintFactor = pow(saturate(depth / _FogDistance), 1.0 / _FogDensity);
@@ -121,8 +125,11 @@
                 baseCol        = lerp(baseCol, gray.xxx, desatF);
 
                 // 7) Fade terrain under objects
-                float sceneD   = SampleSceneDepth(IN.scrPos.xy / IN.scrPos.w);
-                float sceneLin = LinearEyeDepth(sceneD, _ZBufferParams);
+                //float sceneD   = SampleSceneDepth(IN.scrPos.xy / IN.scrPos.w);
+                UNITY_TRANSFER_DEPTH(IN.scrPos.xy / IN.scrPos.w);
+                //float sceneLin = LinearEyeDepth(sceneD, _ZBufferParams);
+                float sceneLin = LinearEyeDepth( _ZBufferParams);
+
                 float diff     = depth - sceneLin;
                 float alpha    = saturate(smoothstep(0, _FadeDistance, diff));
 

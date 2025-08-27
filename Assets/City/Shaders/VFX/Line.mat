@@ -22,6 +22,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Line
   m_Shader: {fileID: 4800000, guid: e459419f7bfed864faf3e931f390631b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -30,6 +32,7 @@ Material:
   m_CustomRenderQueue: 3100
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: :m_CustomRenderQueue
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -105,23 +108,23 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DissolveAmount: 1
-    - _DissolveWidth: 0.028
+    - _DissolveWidth: 0.01
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _FollowOffset: 1
     - _FollowRange: 2
-    - _GlobalFade: 1
+    - _GlobalFade: 0.059
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GlowIntensity: 14
+    - _GlowIntensity: 10
     - _InvertDissolve: 1
     - _JitterExponent: 1
     - _JitterFrequency: 0.1
-    - _JitterRange: 0.61
+    - _JitterRange: 0.41
     - _JitterSegmentScale: 90
     - _JitterSpeed: 0.886
-    - _JitterStrength: 0.28
+    - _JitterStrength: 0.2
     - _JitterTimeScale: 0.03
     - _Metallic: 0
     - _NoiseScale: 0.01
@@ -145,7 +148,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 0.8679245, g: 0.7582058, b: 0.59362763, a: 1}
+    - _MainColor: {r: 1, g: 0.88213366, b: 0.65471697, a: 1}
     - _OffsetAxes: {r: 0.007, g: 0.007, b: 0.03, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

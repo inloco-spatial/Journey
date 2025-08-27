@@ -1,0 +1,86 @@
+{
+  "dependencies": {
+    "com.vrchat.core.vpm-resolver": {
+      "version": "0.1.29"
+    },
+    "com.llealloo.audiolink": {
+      "version": "2.1.0"
+    },
+    "vrchat.jordo.easyquestswitch": {
+      "version": "1.4.0"
+    },
+    "dev.onevr.vrworldtoolkit": {
+      "version": "3.2.1"
+    },
+    "com.vrchat.worlds": {
+      "version": "3.8.1"
+    },
+    "com.z3y.graphlit": {
+      "version": "2.2.5"
+    },
+    "io.z3y.github.shadergraph": {
+      "version": "1.1.1"
+    },
+    "dev.architech.protv": {
+      "version": "3.0.0-beta.28"
+    },
+    "dev.architech.videoplayershim": {
+      "version": "1.4.0"
+    }
+  },
+  "locked": {
+    "com.vrchat.core.vpm-resolver": {
+      "version": "0.1.29",
+      "dependencies": {}
+    },
+    "com.llealloo.audiolink": {
+      "version": "2.1.0",
+      "dependencies": {}
+    },
+    "vrchat.jordo.easyquestswitch": {
+      "version": "1.4.0",
+      "dependencies": {}
+    },
+    "dev.onevr.vrworldtoolkit": {
+      "version": "3.2.1",
+      "dependencies": {}
+    },
+    "com.vrchat.worlds": {
+      "version": "3.8.1",
+      "dependencies": {
+        "com.vrchat.base": "3.8.1"
+      }
+    },
+    "com.vrchat.base": {
+      "version": "3.8.1",
+      "dependencies": {}
+    },
+    "com.z3y.graphlit": {
+      "version": "2.2.5",
+      "dependencies": {}
+    },
+    "io.z3y.github.shadergraph": {
+      "version": "1.1.1",
+      "dependencies": {}
+    },
+    "dev.architech.protv": {
+      "version": "3.0.0-beta.28",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4",
+        "dev.architech.sdk": ">=0.21.2 <1"
+      }
+    },
+    "dev.architech.sdk": {
+      "version": "0.21.2",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.4"
+      }
+    },
+    "dev.architech.videoplayershim": {
+      "version": "1.4.0",
+      "dependencies": {
+        "com.vrchat.worlds": "^3.3"
+      }
+    }
+  }
+}

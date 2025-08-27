@@ -63,7 +63,9 @@ out half3 Emission, out half3 TangentNormal, out half3 TangentWorld)
 	float dl = length(float2(ddx(l), ddy(l)));
 	normal.z = sqrt(1.0 - saturate(l));
 	TangentNormal = normal;
+
 	half3x3 tangentToView = half3x3(ViewTangent, ViewBitangent, ViewNormal);
+	//half3 tangentToView = ViewTangent;
 	half3 viewNormal = normalize(mul(normal, tangentToView));
 	TangentWorld = mul((float3x3)UNITY_MATRIX_I_V, viewNormal);
 

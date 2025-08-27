@@ -5,7 +5,7 @@ Shader "Custom/GlowingDissolveLine"
         _MainColor               ("Glow Color", Color)               = (1,0.8,0.2,1)
         _NoiseTex                ("Noise Texture", 2D)               = "white" {}
         _GlobalFade              ("Global Fade", Range(0,1))         = 1    // общий фейд всей линии
-        _DissolveAmount          ("Dissolve Amount", Range(0,1))     = 0
+        _DissolveAmount          ("Dissolve Amount", Range(0,3))     = 0
         _InvertDissolve          ("Invert Dissolve", Float)          = 1    // перевёрнутый дизолв
         _DissolveWidth           ("Dissolve Softness", Range(0.001,0.5)) = 0.1
         _NoiseScale              ("Noise Scale", Float)              = 1

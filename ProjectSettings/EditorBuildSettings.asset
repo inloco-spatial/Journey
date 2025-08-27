@@ -8,3 +8,5 @@ EditorBuildSettings:
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 962837b0cb34fc041888f4b9a9f2347b,
       type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e13983b308e6ed24f8405e53cf6d8c2a,
+      type: 2}

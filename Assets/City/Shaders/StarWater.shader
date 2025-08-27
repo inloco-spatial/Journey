@@ -50,10 +50,13 @@
             #pragma multi_compile_instancing
             #pragma multi_compile _ _SINGLE_PASS_STEREO
             
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            //#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "UnityCG.cginc"
 
-            TEXTURE2D(_BaseMap); SAMPLER(sampler_BaseMap);
-            TEXTURECUBE(_ReflectionMap); SAMPLER(sampler_ReflectionMap);
+            sampler2D _BaseMap; 
+            //SAMPLER(sampler_BaseMap);
+            float4 _ReflectionMap; 
+            //SAMPLER(sampler_ReflectionMap);
 
             float4 _BaseMap_ST;
             float4 _BaseColor;
@@ -78,7 +81,7 @@
             {
                 float4 positionOS : POSITION;
                 float2 uv         : TEXCOORD0;
-                UNITY_VERTEX_INPUT_INSTANCE_ID
+                //UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct Varyings
@@ -87,17 +90,18 @@
                 float3 positionWS  : TEXCOORD0;
                 float2 uv          : TEXCOORD1;
                 float  viewDepth   : TEXCOORD2;
-                UNITY_VERTEX_OUTPUT_STEREO
-                UNITY_VERTEX_INPUT_INSTANCE_ID
+                //UNITY_VERTEX_OUTPUT_STEREO
+                //UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
-                UNITY_SETUP_INSTANCE_ID(IN);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
+                //UNITY_SETUP_INSTANCE_ID(IN);
+                //UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
 
-                float3 wsPos = TransformObjectToWorld(IN.positionOS.xyz);
+                //float3 wsPos = TransformObjectToWorld(IN.positionOS.xyz);
+                float3 wsPos = IN.positionOS.xyz;
                 float t = _Time.y * _WaveSpeed;
                 float wave = sin((wsPos.x + t) * _WaveFrequency) * cos((wsPos.z + t) * _WaveFrequency) * _WaveAmplitude;
                 wsPos.y += wave;

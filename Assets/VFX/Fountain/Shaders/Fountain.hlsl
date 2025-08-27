@@ -14,7 +14,7 @@ float2 ParallaxMapping(sampler2D reliefmap, float2 p, float3 viewDir, float dept
 void FountainSurf_half(float3 WorldPosition, half3 WorldNormal, half3 WorldDir, 
 half3 ViewVector, half3 ViewNormal, half3 ViewTangent, half3 ViewBitangent, half2 uv0, 
 out half3 Albedo, out half Alpha, out half Smoothness, 
-out half3 Emission, out half3 TangentNormal, out half3 TangentWorld)
+out half3 Emission, out half3 TangentNormal, out half3 TangentWorld) 
 {
 	half3 noise = perlinNoised(uv0, _Scale, _Time.y * _RotationSpeed, 0.0);
 	half2 centeredUV = (uv0 - 0.5) * _Scale;
@@ -27,7 +27,8 @@ out half3 Emission, out half3 TangentNormal, out half3 TangentWorld)
 	normal = normalize(normal);
 	TangentNormal = normal;
 
-	half3x3 tangentToView = half3x3(ViewTangent, ViewBitangent, ViewNormal);
+	//half3x3 tangentToView = half3x3(ViewTangent, ViewBitangent, ViewNormal);
+	half3 tangentToView = ViewTangent;
 	half3 viewNormal = normalize(mul(normal, tangentToView));
 	TangentWorld = mul((float3x3)UNITY_MATRIX_I_V, viewNormal);
 	viewNormal -= ViewNormal;
